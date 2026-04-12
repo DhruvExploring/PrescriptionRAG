@@ -1,0 +1,6 @@
+.env
+project/
+this_is_my_KEY.pem
+run_app.sh
+node_modules/
+__pycache__/

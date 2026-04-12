@@ -1,0 +1,59 @@
+services:
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+
+  qdrant:
+    image: qdrant/qdrant
+    ports:
+      - "6333:6333"
+    volumes:
+      - qdrant_data:/collections
+
+  ollama:
+    image: ollama/ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
+
+  backend:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - qdrant
+      - prometheus
+      - grafana
+      - ollama
+      - redis
+    environment:
+      - OLLAMA_HOST=http://ollama:11434
+      - COHERE_API_KEY=${COHERE_API_KEY}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-admin123}
+      - REDIS_URL=redis://redis:6379
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
+volumes:
+  qdrant_data:
+  ollama_data:
