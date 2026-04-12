@@ -1,0 +1,170 @@
+[
+    {
+        "test": "Hemoglobin Colorimetric",
+        "value": "14.5",
+        "unit": "g/dL",
+        "ref": "13.0 - 16.5"
+    },
+    {
+        "test": "RBC Count Electrical impedance",
+        "value": "4.79",
+        "unit": "million/cmm",
+        "ref": "4.5-5.5"
+    },
+    {
+        "test": "MCV Derived",
+        "value": "90.3",
+        "unit": "fl",
+        "ref": "83-101"
+    },
+    {
+        "test": "MCH Calculated",
+        "value": "30.2",
+        "unit": "Pg",
+        "ref": "27.1 - 32.5"
+    },
+    {
+        "test": "MCHC Calculated",
+        "value": "33.4",
+        "unit": "g/dL",
+        "ref": "32.5 - 36.7"
+    },
+    {
+        "test": "Platelet Count Electrical impedance",
+        "value": "9150000",
+        "unit": "/cmm",
+        "ref": "150000 - 410000"
+    },
+    {
+        "test": "MPV Calculated H",
+        "value": "14.00",
+        "unit": "fL",
+        "ref": "7.5 - 10.3"
+    },
+    {
+        "test": "Fasting Blood Sugar H",
+        "value": "141.0",
+        "unit": "mg/dL",
+        "ref": "74 - 106"
+    },
+    {
+        "test": "f tliodothyronine",
+        "value": "1.01",
+        "unit": "ng/mL",
+        "ref": "0.58 - 1.59"
+    },
+    {
+        "test": "Thyroxine",
+        "value": "7.84",
+        "unit": "mg/mL",
+        "ref": "4.87 - 11.72"
+    },
+    {
+        "test": "Thyroid Stimulating Hormone",
+        "value": "0.8199",
+        "unit": "microlU/mL",
+        "ref": "0.35 - 4.94"
+    },
+    {
+        "test": "Microalbumin (per urine volume)",
+        "value": "10.50",
+        "unit": "mg/L",
+        "ref": "< 16.7"
+    },
+    {
+        "test": "Total Protein",
+        "value": "7.00",
+        "unit": "g/dL",
+        "ref": "6.3 - 8.2"
+    },
+    {
+        "test": "Albumin",
+        "value": "4.20",
+        "unit": "g/dL",
+        "ref": "3.5 - 5.0"
+    },
+    {
+        "test": "Globulin",
+        "value": "2.80",
+        "unit": "g/dL",
+        "ref": "2.3 - 3.5"
+    },
+    {
+        "test": "Total Bilirubin",
+        "value": "0.70",
+        "unit": "mg/dL",
+        "ref": "0.2- 1.3"
+    },
+    {
+        "test": "Conjugated Bilirubin",
+        "value": "0.30",
+        "unit": "mg/dL",
+        "ref": "0.0 - 0.3"
+    },
+    {
+        "test": "Unconjugated Bilirubin",
+        "value": "0.20",
+        "unit": "mg/dL",
+        "ref": "0.0 - 1.1"
+    },
+    {
+        "test": "Delta Bilirubin",
+        "value": "0.20",
+        "unit": "mg/dL",
+        "ref": "0.0 - 0.2"
+    },
+    {
+        "test": "Serum H",
+        "value": "23.86",
+        "unit": "micromol/L",
+        "ref": "6.0 - 14.8"
+    },
+    {
+        "test": "Serum",
+        "value": "0.83",
+        "unit": "mg/dL",
+        "ref": "0.66 - 1.25"
+    },
+    {
+        "test": "L",
+        "value": "18.0",
+        "unit": "mg/dL",
+        "ref": "19.3 - 43.0"
+    },
+    {
+        "test": "Blood Urea Nitrogen L",
+        "value": "8.41",
+        "unit": "mg/dL",
+        "ref": "9.0 - 20.0"
+    },
+    {
+        "test": "Uric Acid",
+        "value": "4.90",
+        "unit": "mg/dL",
+        "ref": "3.5 - 8.5"
+    },
+    {
+        "test": "Calcium",
+        "value": "9.10",
+        "unit": "mg/dL",
+        "ref": "8.4- 10.2"
+    },
+    {
+        "test": "SGOT",
+        "value": "27.0",
+        "unit": "U/L",
+        "ref": "17 - 59"
+    },
+    {
+        "test": "Total",
+        "value": "0.573",
+        "unit": "ng/mL",
+        "ref": "0-4"
+    },
+    {
+        "test": "IgE H",
+        "value": "492.30",
+        "unit": "IU/mL",
+        "ref": "0-87"
+    }
+]
