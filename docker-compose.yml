@@ -10,14 +10,6 @@ services:
       - "6333:6333"
     volumes:
       - qdrant_data:/collections
-
-  ollama:
-    image: ollama/ollama
-    ports:
-      - "11434:11434"
-    volumes:
-      - ollama_data:/root/.ollama
-
   prometheus:
     image: prom/prometheus
     ports:
@@ -29,6 +21,8 @@ services:
       - "3000:3000"
     depends_on:
       - prometheus
+    env_file:
+      - .env
 
   backend:
     build: .
@@ -38,10 +32,8 @@ services:
       - qdrant
       - prometheus
       - grafana
-      - ollama
       - redis
     environment:
-      - OLLAMA_HOST=http://ollama:11434
       - COHERE_API_KEY=${COHERE_API_KEY}
       - GEMINI_API_KEY=${GEMINI_API_KEY}
       - ADMIN_PASSWORD=${ADMIN_PASSWORD:-admin123}
@@ -56,4 +48,4 @@ services:
 
 volumes:
   qdrant_data:
-  ollama_data:
+

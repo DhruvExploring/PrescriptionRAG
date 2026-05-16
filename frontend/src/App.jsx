@@ -16,8 +16,13 @@ function App() {
     setResult(null);
 
     const formData = new FormData();
-    formData.append('file', file);
-    formData.append('symptoms', symptoms);
+    if (file) {
+      formData.append('file', file);
+    } else {
+      const emptyFile = new File([""], "empty.pdf", { type: "application/pdf" });
+      formData.append('file', emptyFile);
+    }
+    formData.append('symptoms', symptoms || "No symptoms provided");
 
     try {
       const response = await axios.post('http://localhost:8000/analyze', formData, {

@@ -13,7 +13,7 @@ const UploadForm = ({ onAnalyze, isLoading }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (file && symptoms) {
+        if (file || symptoms) {
             onAnalyze(file, symptoms);
         }
     };
@@ -54,7 +54,7 @@ const UploadForm = ({ onAnalyze, isLoading }) => {
                                     <div className="flex text-sm text-gray-600">
                                         <label htmlFor="file-upload" className="relative cursor-pointer bg-white rounded-md font-medium text-blue-600 hover:text-blue-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500">
                                             <span>Upload a file</span>
-                                            <input id="file-upload" name="file-upload" type="file" className="sr-only" accept=".pdf" onChange={handleFileChange} required />
+                                            <input id="file-upload" name="file-upload" type="file" className="sr-only" accept=".pdf" onChange={handleFileChange} />
                                         </label>
                                         <p className="pl-1">or drag and drop</p>
                                     </div>
@@ -75,7 +75,6 @@ const UploadForm = ({ onAnalyze, isLoading }) => {
                         placeholder="E.g., I have had a persistent headache for 3 days and slight fever..."
                         value={symptoms}
                         onChange={(e) => setSymptoms(e.target.value)}
-                        required
                     />
                 </div>
 
@@ -83,7 +82,7 @@ const UploadForm = ({ onAnalyze, isLoading }) => {
                 <div>
                     <button
                         type="submit"
-                        disabled={!file || !symptoms || isLoading}
+                        disabled={(!file && !symptoms) || isLoading}
                         className={`w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all ${isLoading ? 'opacity-70 cursor-not-allowed' : ''
                             }`}
                     >

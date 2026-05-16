@@ -1,11 +1,9 @@
 fastapi
 uvicorn[standard]==0.29.0
-ollama
 numpy
 pandas
 python-dotenv
 cohere
-ollama
 google-genai
 qdrant-client
 pdf2image
@@ -18,3 +16,4 @@ requests
 pydantic
 python-multipart==0.0.9
 redis
+openai

@@ -1,7 +1,6 @@
 import os
 import json
 import re
-import ollama
 import numpy as np
 import pandas as pd
 from pdf2image import convert_from_bytes
@@ -15,12 +14,13 @@ from qdrant_client.models import PointStruct
 from qdrant_client.models import Distance, VectorParams
 from .reranking import Reranking
 import cohere 
+from openai import OpenAI
 
 
 client = QdrantClient(host="qdrant", port=6333)
 
 dotenv.load_dotenv()
-
+openai_client=OpenAI()
 
 
 try:
@@ -37,7 +37,7 @@ def extract_and_parse_report(pdf_bytes: bytes):
         pages = convert_from_bytes(pdf_bytes)
     except Exception as e:
         print(f"Error converting PDF: {e}")
-        return {}, ""
+        return [], ""
 
     full_text = ""
     for page in pages:
@@ -97,8 +97,13 @@ def generate_diagnosis(symptoms: str, report_data: list, full_report_text: str):
 
     # Embed the query (symptoms)
     try:
-        response = ollama.embed(model="bge-m3", input=symptoms)
-        query_embedding = response["embeddings"][0]
+
+        result = openai_client.embeddings.create(
+                model="text-embedding-3-small",
+                input=symptoms,
+                dimensions=1024
+        )
+        query_embedding = result.data[0].embedding
     except Exception as e:
         return f"Error embedding query: {e}"
     query_embedding=np.array(query_embedding).reshape(1024,1)
