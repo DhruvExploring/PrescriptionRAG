@@ -25,7 +25,7 @@ function App() {
     formData.append('symptoms', symptoms || "No symptoms provided");
 
     try {
-      const response = await axios.post('http://localhost:8000/analyze', formData, {
+      const response = await axios.post('http://13.127.86.204:8000/analyze', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -51,7 +51,7 @@ function App() {
           <div className="flex items-center gap-2">
             <HeartPulse className="w-8 h-8 text-blue-600" />
             <h1 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
-              PrescriptionRAG
+              FreshApple
             </h1>
           </div>
           <div className="text-sm font-medium text-gray-500">
@@ -114,7 +114,7 @@ function App() {
       {/* Footer */}
       <footer className="bg-white border-t border-gray-200 mt-20">
         <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
-          &copy; 2026 PrescriptionRAG. All rights reserved. This is an AI assistant and not a substitute for professional medical advice.
+          &copy; 2026 FreshApple. All rights reserved. This is an AI assistant and not a substitute for professional medical advice.
         </div>
       </footer>
     </div>

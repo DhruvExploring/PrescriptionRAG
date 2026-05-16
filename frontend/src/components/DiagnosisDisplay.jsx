@@ -32,7 +32,7 @@ const DiagnosisDisplay = ({ result }) => {
     const handleSubmitFeedback = async () => {
         setIsSubmitting(true);
         try {
-            await axios.post('http://localhost:8000/feedback', {
+            await axios.post('http://13.127.86.204:8000/feedback', {
                 helpful: isHelpful,
                 comments: comments
             });
