@@ -25,7 +25,7 @@ function App() {
     formData.append('symptoms', symptoms || "No symptoms provided");
 
     try {
-      const response = await axios.post('http://13.127.86.204:8000/analyze', formData, {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/analyze`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

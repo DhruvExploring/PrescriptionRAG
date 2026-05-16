@@ -169,5 +169,18 @@ def generate_diagnosis(symptoms: str, report_data: list, full_report_text: str):
             contents=prompt,
         )
         return response.text
+
+    
     except Exception as e:
-        return f"Error generating response from Gemini: {e}"
+
+        try:
+            response = openai_client.responses.create(
+                model="gpt-4o",
+                input=prompt,
+            )
+
+            return response.output_text
+
+            
+        except Exception as e:
+            return f"Error generating response from GPT: {e}"

@@ -17,7 +17,7 @@ const AdminPanel = () => {
 
     const fetchFeedbackData = async (currentToken) => {
         try {
-            const response = await axios.get('http://13.127.86.204:8000/feedback', {
+            const response = await axios.get(`${import.meta.env.VITE_API_URL}/feedback`, {
                 headers: { Authorization: `Bearer ${currentToken}` }
             });
             setFeedbackData(response.data);
@@ -35,7 +35,7 @@ const AdminPanel = () => {
         e.preventDefault();
         setAuthError('');
         try {
-            const res = await axios.post('http://13.127.86.204:8000/admin/login', { password });
+            const res = await axios.post(`${import.meta.env.VITE_API_URL}/admin/login`, { password });
             const receivedToken = res.data.token;
             setToken(receivedToken);
             sessionStorage.setItem('adminToken', receivedToken);
@@ -53,7 +53,7 @@ const AdminPanel = () => {
     const handleDownload = async () => {
         if (!token) return;
         try {
-            const response = await axios.get('http://13.127.86.204:8000/feedback/download', {
+            const response = await axios.get(`${import.meta.env.VITE_API_URL}/feedback/download`, {
                 headers: { Authorization: `Bearer ${token}` },
                 responseType: 'blob'
             });

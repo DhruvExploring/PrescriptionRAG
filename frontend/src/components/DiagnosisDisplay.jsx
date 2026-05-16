@@ -32,7 +32,7 @@ const DiagnosisDisplay = ({ result }) => {
     const handleSubmitFeedback = async () => {
         setIsSubmitting(true);
         try {
-            await axios.post('http://13.127.86.204:8000/feedback', {
+            await axios.post(`${import.meta.env.VITE_API_URL}/feedback`, {
                 helpful: isHelpful,
                 comments: comments
             });
