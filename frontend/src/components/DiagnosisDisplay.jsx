@@ -64,7 +64,7 @@ const DiagnosisDisplay = ({ result }) => {
                         Diagnosis & Recommendations
                     </h2>
                 </div>
-                <div className="p-8 prose prose-blue max-w-none">
+                <div className="p-4 sm:p-8 prose prose-blue max-w-none" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
                     <ReactMarkdown>{diagnosis}</ReactMarkdown>
                 </div>
             </div>

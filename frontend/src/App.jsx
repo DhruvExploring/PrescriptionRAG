@@ -69,7 +69,7 @@ function App() {
               Understand Your Health Better
             </h2>
             <p className="mt-4 text-lg text-gray-600">
-              Upload your medical reports and describe your symptoms. Our AI engine analyzes your data against trusted medical texts to provide you with a comprehensive explanation.
+              Upload your medical reports or describe your symptoms. Our AI engine analyzes your data against trusted medical texts to provide you with a comprehensive explanation.
             </p>
           </div>
         )}

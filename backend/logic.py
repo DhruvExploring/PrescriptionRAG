@@ -155,9 +155,9 @@ def generate_diagnosis(symptoms: str, report_data: list, full_report_text: str):
     1. Analyze the patient's symptoms and their medical report values.
     2. Use the provided medical knowledge chunks to explain the condition or diagnosis.
     3. Provide a diagnosis in a clear, professional, and empathetic tone.
-    4. Reference specific page numbers from the textbook chunks where you found the information.
+    4. Reference specific page numbers from the textbook chunks where you found the information in the end. 
     5. Do NOT end with follow-up questions. Give a comprehensive explanation.
-    6. give clear an cocise paragraphs or pointer in different sections  so that a doctor can unerstand the unerlying problem at a glance.
+    6. Give a clear explanation in bullet points followed by a paragraph explaining the diagnosis in detail. Highlight the summary in bold.
     
     Answer:
     """
